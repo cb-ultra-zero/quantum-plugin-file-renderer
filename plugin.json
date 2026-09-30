@@ -1,0 +1,30 @@
+{
+  "abi": 1,
+  "id": "file-renderer",
+  "version": "0.1.0",
+  "entry": "lib/libquantum_plugin_file_renderer.so",
+  "entry_sha256": "3ec5cf59575d0967eb897eb950ded67e9a9ffe6b4036f90a5e35d28d8d5fdad7",
+  "renderers": [
+    {
+      "id": "file-renderer.media",
+      "label": "Media",
+      "types": ["file@1"],
+      "mimes": ["image/*", "video/*"],
+      "priority": 100
+    },
+    {
+      "id": "file-renderer.markdown",
+      "label": "Markdown",
+      "types": ["file@1"],
+      "mimes": ["text/markdown", "text/plain"],
+      "priority": 90
+    },
+    {
+      "id": "file-renderer.document",
+      "label": "Document",
+      "types": ["file@1"],
+      "mimes": ["application/pdf", "*/*"],
+      "priority": 10
+    }
+  ]
+}

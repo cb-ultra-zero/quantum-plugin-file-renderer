@@ -1,0 +1,12 @@
+id = "file-renderer"
+version = "0.1.0"
+api-range = ">=0.1, <0.2"
+capabilities = []
+provides = []
+
+# A renderer-only plugin declares ZERO registers (docs/external-plugins.md §2): the block
+# type `file@1` is owned by the bundled `files` plugin. The key must still be present —
+# `kernel::registry::ManifestToml.registers` is a plain `Vec` with no serde default, so an
+# absent key is a parse error, while `registers = []` parses to an empty list and the host's
+# load path must not treat that as an error.
+registers = []

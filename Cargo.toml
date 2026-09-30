@@ -1,0 +1,29 @@
+[package]
+name = "quantum_plugin_file_renderer"
+version = "0.1.0"
+edition = "2021"
+license = "UNLICENSED"
+description = "The first external plugin for the quantum notes app: file@1 renderers for media, markdown and documents"
+repository = "https://github.com/chaosbolt99999/quantum-plugin-file-renderer"
+publish = false
+
+[lib]
+name = "quantum_plugin_file_renderer"
+crate-type = ["cdylib"]
+
+# The ABI contract is "a plugin must not panic across the boundary"
+# (docs/external-plugins.md §3), and `quantum_plugin_v1_render` converts a panic into an
+# `{"error": …}` response with `catch_unwind` — which only works while unwinding is the
+# panic strategy. Do not set `panic = "abort"`.
+[profile.release]
+panic = "unwind"
+
+# Runtime dependencies are deliberately just these two: the plugin's only contract with
+# the app is the §3 JSON ABI, so it must not depend on the quantum workspace, the kernel,
+# gpui, or anything platform-specific.
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# This repo is its own workspace root, so it can never be absorbed into another one.
+[workspace]
