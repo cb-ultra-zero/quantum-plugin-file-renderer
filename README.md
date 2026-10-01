@@ -1,7 +1,7 @@
 # quantum-plugin-file-renderer
 
 The **first external plugin** for the quantum notes app (design.md **D25**,
-[`docs/external-plugins.md`](https://github.com/chaosbolt99999/quantum/blob/main/docs/external-plugins.md)
+[`docs/external-plugins.md`](https://github.com/cb-ultra-zero/quantum/blob/main/docs/external-plugins.md)
 §2–§4, §8).
 
 It is a dependency-light Rust `cdylib` that renders `file@1` blocks: images inline, video as

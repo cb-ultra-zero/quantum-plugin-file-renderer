@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "UNLICENSED"
 description = "The first external plugin for the quantum notes app: file@1 renderers for media, markdown and documents"
-repository = "https://github.com/chaosbolt99999/quantum-plugin-file-renderer"
+repository = "https://github.com/cb-ultra-zero/quantum-plugin-file-renderer"
 publish = false
 
 [lib]
